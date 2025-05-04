@@ -9,6 +9,24 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::prefix('/user')->group(function () {
+    Route::get('/registrasi', function () {
+        return view('user.register');
+    });
+
+    Route::get('/start', function () {
+        return view('user.start');
+    });
+
+    Route::get('/trivia', function () {
+        return view('user.trivia');
+    });
+
+    Route::get('/finish', function () {
+        return view('user.finish');
+    });
+});
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
