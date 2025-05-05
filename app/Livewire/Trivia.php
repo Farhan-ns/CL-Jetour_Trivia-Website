@@ -45,6 +45,8 @@ class Trivia extends Component
             $this->currentIndex++;
         } else {
             // Handle trivia ends here
+            session(['active_session_answer' => $this->answerData]);
+            $this->redirect('/user/finish');
         }
     }
 

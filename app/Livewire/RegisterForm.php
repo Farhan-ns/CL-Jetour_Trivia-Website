@@ -7,6 +7,8 @@ use Livewire\Component;
 class RegisterForm extends Component
 {
     public $name = '';
+    public $email = '';
+    public $city = '';
     public $phone = '';
     public $is_agree_to_terms = '';
 
@@ -14,9 +16,12 @@ class RegisterForm extends Component
     {
         $validated = $this->validate([
             'name' => 'required',
+            'email' => 'required|email',
+            'city' => 'required',
             'phone' => 'required|numeric|min:6',
             'is_agree_to_terms' => 'accepted',
         ]);
+        $validated['password'] = $validated['email'] . $validated['phone'];
 
         session(['active_session_user' => $validated]);
         

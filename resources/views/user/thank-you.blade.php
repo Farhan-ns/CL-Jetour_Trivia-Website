@@ -52,24 +52,35 @@
         data-aos="zoom-in-up" alt="Logo Jetour">
     </div>
 
-    {{-- <div class="flex justify-center max-w-2xl">
-      <h1 data-aos="zoom-in-up" data-aos-duration="500" class="text-4xl text-center font-bold text-white mb-40">
-        TRIVIA QUIZ
-      </h1>
-    </div> --}}
+    <div class="flex justify-center max-w-2xl">
+        <h1 data-aos="zoom-in-up" data-aos-duration="500" class="text-5xl text-center font-bold text-white mb-4">
+          {{ $score }}
+        </h1>
+      </div>
 
-    <div class="p-1 w-full max-w-2xl flex flex-col justify-center gap-1 mb-4 min-h-96">
-      <form action="/user/finish" method="POST">
-        @csrf
+    <div class="flex justify-center max-w-2xl">
+      <h2 data-aos="zoom-in-up" data-aos-duration="500" class="text-2xl text-center font-bold text-white mb-20">
+        {{ $correctCount }} dari {{ $totalCount }} Benar
+      </h2>
+    </div>
+
+    <div class="flex justify-center max-w-2xl">
+      <h1 data-aos="zoom-in-up" data-aos-duration="500" class="text-4xl text-center font-bold text-white mb-40">
+        Thank You For You Participation.
+      </h1>
+    </div>
+
+    <div class="p-1 w-full max-w-2xl flex-col gap-1 mb-4">
+      <a href="/user/start">
         <div class="flex items-center justify-center mb-4 ">
           <div class="w-lg h-12">
-            <button type="submit"
+            <button
               class="btn-start-bg size-full bg-cover bg-center rounded-xl shadow-xl transition-all duration-300 text-[2rem] text-white">
-              SUBMIT
+              Selesai
             </button>
           </div>
         </div>
-      </form>
+      </a>
     </div>
 
   </div>

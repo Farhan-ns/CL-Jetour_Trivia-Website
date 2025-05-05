@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'city',
     ];
 
     /**
@@ -56,5 +58,10 @@ class User extends Authenticatable
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    public function triviaAnswer()
+    {
+        return $this->hasMany(TriviaAnswer::class);
     }
 }

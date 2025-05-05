@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Models\Question;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,6 +27,39 @@ Route::prefix('/user')->group(function () {
 
     Route::get('/finish', function () {
         return view('user.finish');
+    });
+
+    Route::post('/finish', function () {
+        $validatedUser = session('active_session_user');
+        $validatedAnswer = session('active_session_answer');
+        
+        $user = User::create($validatedUser);
+        $user->triviaAnswer()->create([
+            'answer_data' => $validatedAnswer
+        ]);
+
+        return redirect('/user/thank-you')->with('validatedAnswer', $validatedAnswer);
+    });
+
+    Route::get('/thank-you', function() {
+        $validatedAnswer = session('validatedAnswer'); 
+
+        $correctCount = 0;
+        $totalCount = count($validatedAnswer);
+        foreach ($validatedAnswer as $answer) {
+            if ($answer['isCorrect'])  {
+                $correctCount += 1;
+            }
+        }
+
+        $score = $correctCount / $totalCount * 100;
+
+        session([
+            'active_session_user' => null,
+            'active_session_answer' => null,
+        ]);
+
+        return view('user.thank-you', compact('correctCount', 'totalCount', 'score'));
     });
 });
 
