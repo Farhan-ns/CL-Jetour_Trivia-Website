@@ -3,6 +3,7 @@
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use App\Models\Question;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,7 +20,8 @@ Route::prefix('/user')->group(function () {
     });
 
     Route::get('/trivia', function () {
-        return view('user.trivia');
+        $questions = Question::all();
+        return view('user.trivia', compact('questions'));
     });
 
     Route::get('/finish', function () {

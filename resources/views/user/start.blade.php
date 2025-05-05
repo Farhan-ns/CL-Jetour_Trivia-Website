@@ -33,11 +33,13 @@
         labore et dolore magna aliqua.</h1>
     </div>
 
-    <div class="p-1 w-full max-w-2xl flex-col gap-1 mb-4">
-      <div class="flex items-center mb-4">
-        <button data-aos="zoom-in-up" data-aos-duration="850" type="button"
-          class=" shadow shadow-teal-500/50 w-full text-white bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Lanjut</button>
-      </div>
+    <div class="p-1 w-full max-w-2xl flex-col gap-1 mb-4" >
+      <a href="/user/registrasi">
+        <div class="flex items-center mb-4">
+          <button data-aos="zoom-in-up" data-aos-duration="850" type="button"
+            class="cursor-pointer shadow shadow-teal-500/50 w-full text-white bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Lanjut</button>
+        </div>
+      </a>
     </div>
 
   </div>

@@ -24,6 +24,8 @@
     <div data-aos="fade-left" data-aos-duration="300" class="flex flex-col items-center bg-softblack w-full px-4 py-6 rounded-lg shadow-lg ">
       <h1 class="text-3xl text-white">Registrasi</h1>
 
+      {{-- TODO: change to livewire --}}
+
       <div class="p-1 w-full max-w-2xl flex-col gap-1 mb-4">
         <label class="text-2xl text-white">Nama</label>
         <input type="text" id="first_name"
