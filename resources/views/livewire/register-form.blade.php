@@ -40,19 +40,6 @@
   </div>
 
   <div class="p-1 w-full max-w-2xl flex-col gap-1 mb-4">
-    @error('is_agree_to_terms')
-      <p class="bg-white py-1 px-2 rounded-lg text-red-600">{{ $message }}</p>
-    @enderror
-    <div class="flex items-center mb-4">
-      <input wire:model='is_agree_to_terms' id="checkbox-2" type="checkbox" value="1" name="is_agree_to_terms"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500">
-      <label for="checkbox-2" class="ms-2 text-sm font-medium text-white">Saya mengetahui dan menyetujui untuk
-        memberikan data pribadi guna kebutuhan layanan dan persetujuan ini memiliki kekuatan hukum yang
-        mengikat.</label>
-    </div>
-  </div>
-
-  <div class="p-1 w-full max-w-2xl flex-col gap-1 mb-4">
     <div class="flex items-center mb-4">
       @include('user.components.button')
     </div>
