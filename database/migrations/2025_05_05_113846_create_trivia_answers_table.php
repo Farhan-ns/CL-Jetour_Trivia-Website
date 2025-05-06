@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('trivia_answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->constrained();
             $table->json('answer_data');
             $table->timestamps();
         });

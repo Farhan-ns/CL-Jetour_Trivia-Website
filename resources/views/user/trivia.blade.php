@@ -41,9 +41,9 @@
 
           <livewire:trivia :questions=$questions />
 
-          <div class="flex justify-end mt-4">
+          {{-- <div class="flex justify-end mt-4">
             <img src="{{ asset('images/Jetour - DNA.png') }}" class="max-w-52" alt="Logo Jetour">
-          </div>
+          </div> --}}
         </div>
       </div>
 

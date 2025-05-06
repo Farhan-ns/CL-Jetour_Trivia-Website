@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('user/start');
 })->name('home');
 
 Route::prefix('/user')->group(function () {
