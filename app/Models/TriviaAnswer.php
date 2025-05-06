@@ -23,6 +23,27 @@ class TriviaAnswer extends Model
         ];
     }
 
+    public function getScore() 
+    {
+        $arrAnswer = $this->answer_data;
+        $correctCount = 0;
+        $totalCount = count($arrAnswer);
+
+        foreach ($arrAnswer as $answer) {
+            if ($answer['isCorrect']) {
+                $correctCount++;
+            }
+        }
+
+        $score = $correctCount / $totalCount * 100;
+
+        return [
+            'correctCount' => $correctCount,
+            'totalCount' => $totalCount,
+            'score' => $score,
+        ];
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
