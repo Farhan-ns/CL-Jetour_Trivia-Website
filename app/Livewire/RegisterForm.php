@@ -19,7 +19,6 @@ class RegisterForm extends Component
             'email' => 'required|email',
             'city' => 'required',
             'phone' => 'required|numeric|min:6',
-            'is_agree_to_terms' => 'accepted',
         ]);
         $validated['password'] = $validated['email'] . $validated['phone'];
 
